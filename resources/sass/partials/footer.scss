@@ -1,0 +1,47 @@
+footer {
+    padding: $verticalPadding $horizontalPadding;
+    background: $footerBgColor;
+    display: flex;
+    justify-content: space-between;
+
+    .footer_section {
+        width: calc(98% / 4);
+        padding: 0 10px;
+
+        .footer_title {
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $primaryColor;
+        }
+
+        .footer_content {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        #social_icons {
+            @include horizontalFlex;
+            margin-top: 10px;
+            .social_icon {
+                font-size: 25px;
+                margin-right: 20px;
+                color: darken($footerBgColor, 50%);
+                transition: color .4s;
+                
+                &.fb:hover {
+                    color: #1771E6;
+                }
+                &.ig:hover {
+                    color: #E63162;
+                }
+                &.yt:hover {
+                    color: #FF0000;
+                }
+                &.in:hover {
+                    color: #0A66C2;
+                }
+            }
+        }
+    }
+}

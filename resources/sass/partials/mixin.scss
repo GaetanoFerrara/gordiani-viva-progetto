@@ -1,0 +1,9 @@
+@mixin horizontalFlex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin backgroundDefault {
+    background-repeat: no-repeat;
+    background-position: center;
+}

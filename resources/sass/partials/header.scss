@@ -1,0 +1,122 @@
+#navbar_top {
+
+    @include horizontalFlex;
+    justify-content: space-between;
+    padding: 0 $horizontalPadding;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $navbarTopHeight;
+    background: $primaryColor;
+    color: $secondaryTextColor;
+    z-index: 3;
+
+    .header_left {
+        @include horizontalFlex;
+        font-weight: 700;
+        text-transform: uppercase;
+        .logo {
+            width: 50px;
+            margin-right: 20px;
+            background: #fff;
+            border-radius: 50%;
+        }
+        h3 {
+            font-weight: 700;
+            font-size: 19px;
+        }
+    }
+
+    .header_right {
+        font-size: 25px;
+        cursor: pointer;
+    }
+}
+
+
+header {
+
+
+    #jumbotron {
+        overflow: hidden;
+        margin-top: $navbarTopHeight;
+        color: $secondaryTextColor;
+
+        .swiper-button-prev, 
+        .swiper-button-next {
+            width: 70px;
+            height: 70px;
+            background: $primaryColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: $secondaryTextColor;
+            transition: all .4s;
+            cursor: pointer;
+
+            &:hover {
+                color: $primaryColor;
+                background: $secondaryTextColor;
+            }
+
+            &::after {
+                content: "";
+            }
+        } 
+
+        .jumbotron_item {
+            position: relative;
+            height: calc(100vh - #{$navbarTopHeight});
+            @include backgroundDefault;
+            background-size: cover;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                display: block;
+                background: #00000035;
+            }
+
+            .jumbotron_item_text {
+                position: absolute;
+                bottom: 150px;
+                left: 150px;
+                text-transform: uppercase;
+                .jumbotron_title {
+                    font-size: 60px;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                }
+                .jumbotron_subtitle {
+                    font-size: 24px;
+                }
+                .jumbotron_link {
+                    display: inline-block;
+                    overflow-x: hidden;
+                    padding: 10px;
+                    background: $primaryColor;
+                    font-weight: 600;
+                    color: $secondaryTextColor;
+                    margin-top: 10px;
+                    transition: all .3s;
+                    i {
+                        margin-left: 5px;
+                        position: relative;
+                        left: 0;
+                        transition: all .5s;
+                    }
+
+                    &:hover {
+                        background: lighten($primaryColor, 10%);
+                        i {
+                            left: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

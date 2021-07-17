@@ -1,0 +1,316 @@
+main {
+
+    #retraining {
+        padding: $verticalPadding $horizontalPadding;
+
+        h2.section_title.dynamic {
+            margin-bottom: 0;
+            color: #000;
+            transition: color .3s;
+
+            &:hover {
+                cursor: pointer;
+                color: $primaryColor;
+            }
+
+        }
+        
+        .chevron {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: lighten(#000, 60%);
+            i {
+                position: relative;
+                animation: chevronAnimation 2s infinite;
+            }
+        }
+    
+        .block_list {
+            padding: 30px 0;
+            @include horizontalFlex;
+            justify-content: space-between;
+    
+            .retraining_item {
+                width: calc(98% / 2);
+                height: 400px;
+                position: relative;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+    
+                .retraining_btn {
+                    position: absolute;
+                    bottom: -35px;
+                    right: 30px;
+                    width: 70px;
+                    height: 70px;
+                    background: $primaryColor;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 30px;
+                    color: $secondaryTextColor;
+                    transition: all .4s;
+                    cursor: pointer;
+    
+                    &:hover {
+                        color: $primaryColor;
+                        background: $secondaryTextColor;
+                    }
+                }
+    
+                .retraining_content_description {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    padding: 40px 35px;
+                    color: $secondaryTextColor;
+                    background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0%,#000000 40%);
+                    h3 {
+                        font-weight: 700;
+                        font-size: 28px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    
+        #retraining_sub_content {
+            margin-top: 20px;
+            padding: 0 0 calc(#{$verticalPadding} / 2);
+            
+            .block_list {
+                display: flex;
+                justify-content: center;
+                
+                .retraining_sub_item {
+                    width: calc(100% / 2 - 10px);
+                    height: 370px;
+                    margin: 0 5px;
+                    position: relative;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+
+                    .path_btn {
+                        position: absolute;
+                        bottom: -45px;
+                        right: 30px;
+                        width: 70px;
+                        height: 70px;
+                        background: $primaryColor;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 30px;
+                        color: $secondaryTextColor;
+                        transition: all .4s;
+                        cursor: pointer;
+        
+                        &:hover {
+                            color: $primaryColor;
+                            background: $secondaryTextColor;
+                        }
+                    }
+                    
+                    
+                    .retraining_sub_item_description {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        padding: 20px;
+                        background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0%,#00000090 30%);
+                        
+                        h4 {
+                            text-align: center;
+                            text-transform: uppercase;
+                            font-size: 25px;
+                            color: #fff;
+                            font-weight: 700;
+                        }
+                    }
+    
+                    .retraining_sub_item_layover {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: #eeeeee;
+                        opacity: 0;
+                        transition: all .4s;
+    
+                        .layover_list {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            flex-direction: column;
+    
+                            li {
+                                color: $primaryColor;
+                                font-size: 20px;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+    
+                    &:hover .retraining_sub_item_layover {
+                        opacity: 1;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    #tutorials {
+        padding: 0 $horizontalPadding;
+        height: 400px;
+        margin: 40px 0;
+
+        .tutorials_list {
+            height: 100%;
+            display: flex;
+            
+            .tutorial_item {
+                display: flex;
+                flex-direction: column-reverse;
+                width: calc(100% / 4);
+                height: 100%;
+                border-bottom: 4px solid $primaryColor;
+
+                &:nth-child(even) {
+                     flex-direction: column;
+                     border-top: 4px solid $primaryColor;
+                     border-bottom: 0;
+                }
+
+                .tutorial_item_image {
+                    height: 83%;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                .tutorial_item_desc {
+                    padding: 2px 10px;
+
+                    .item_desc_top {
+                        .item_num {
+                            display: inline-block;
+                            width: 10%;
+                            text-align: center;
+                            vertical-align: middle;
+                            font-size: 17px;
+                            color: $primaryColor;
+                            font-weight: 700;
+                        }
+
+                        .item_separator {
+                            display: inline-block;
+                            width: 90%;
+                            border-bottom: 1px solid black;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    .item_desc_text {
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: 700;
+                        padding: 0;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #paths {
+
+        padding: 0 $horizontalPadding $verticalPadding;
+
+        .section_title {
+            margin-bottom: 30px;
+        }
+
+        #paths_list {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .path_item {
+                width: calc(90% / 3);
+
+                .path_item_pic {
+                    position: relative;
+
+                    .path_btn {
+                        position: absolute;
+                        bottom: -45px;
+                        right: 30px;
+                        width: 70px;
+                        height: 70px;
+                        background: $primaryColor;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 30px;
+                        color: $secondaryTextColor;
+                        transition: all .4s;
+                        cursor: pointer;
+        
+                        &:hover {
+                            color: $primaryColor;
+                            background: $secondaryTextColor;
+                        }
+                    }
+                }
+
+                .path_item_description {
+                    margin-top: 20px;
+
+                    h3 {
+                        text-transform: uppercase;
+                        font-size: 29px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+    .video {
+        padding: $verticalPadding $horizontalPadding;
+        background: #18181C;
+        color: #fff;
+
+        .text {
+            background: #18181C;
+        }
+
+        .section_title::before {
+            border: 1px solid #fff;
+            background: #fff;
+        }
+
+        .video_container {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+
